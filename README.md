@@ -33,7 +33,10 @@ kitti_download_dir/2011_09_26/2011_09_26_drive_0001_sync
 5. Set `kitti_data_dir` to your kitti data directrory path in launch/benchmark.launch#L104
 
 6. Launch `benchmark.launch` in launch directory.
-After finished recording results, you should get `benchmark_result.txt` file under the kitti data directory.
+
+7. Play the rosbag made in step 4.
+
+8. After finished recording results, you should get `benchmark_result.txt` file under the kitti data directory.
 ```
 kitti_download_dir/2011_09_26/2011_09_26_drive_0001_sync
 |
@@ -41,4 +44,6 @@ kitti_download_dir/2011_09_26/2011_09_26_drive_0001_sync
 └──benchmark_result.txt
 ```
 
-7. Run `python3 evaluate_tracking.py` 
+9. Run `python3 evaluate_tracking.py`
+
+10. You will see benchmark directory under `kitti data directory`.
