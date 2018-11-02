@@ -109,7 +109,8 @@
   <arg name="prevent_explosion_thres" default="1000"/>
   <arg name="tracker_input_topic" default="/detection/lidar_detector/objects"/>
   <arg name="tracker_output_detected_topic" default="/detection/lidar_tracker/objects"/>
-  <arg name="use_sukf" default="use_sukf"/>
+  <arg name="use_sukf" default="false"/>
+  <arg name="is_benchmark" default="true"/>
 
   <arg name="tracking_frame" default="/world"/>
   <arg name="kitti_data_dir" default="/home/kosuke/hdd/kitti/2011_09_26/2011_09_26_drive_0005_sync/" />
@@ -128,6 +129,7 @@
     <param name="use_sukf" value="$(arg use_sukf)"/>
     <param name="input_topic" value="$(arg tracker_input_topic)"/>
     <param name="kitti_data_dir"          value="$(arg kitti_data_dir)" />
+    <param name="is_benchmark"          value="$(arg is_benchmark)" />
 
     <remap from="/detection/lidar_tracker/objects" to="$(arg tracker_output_detected_topic)"/>
   </node>
