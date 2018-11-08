@@ -149,6 +149,19 @@ class TrackingEvaluation(object):
         # construct objectDetections object to hold detection data
         object_data  = ObjectData()
         n_trajectories     = 0
+
+        # check number of frames are consistent
+        file           = open(file_path, "r")
+        lines = file.read().splitlines()
+        last_line = lines[-1]
+        splitted_line = last_line.split()
+        loaded_num_frame_str = splitted_line[0]
+        loaded_num_frame = int(loaded_num_frame_str)+1
+        if(loaded_num_frame != self.n_frames):
+            print("Loaded %d of data is not equal to %d of data." %(num_frame, self.n_frames))
+            return False
+
+
         file           = open(file_path, "r")
         f_data         = [[] for x in range(self.n_frames)] # current set has only 1059 entries, sufficient length is checked anyway
         ids            = []
